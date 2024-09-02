@@ -2,9 +2,8 @@ import { Route, Routes } from 'react-router-dom'
 import './Dashboard.css'
 import { DashboardLayout } from '../../layout/DashboardLayout'
 import { Citas } from '../../views/Citas/Citas'
-
-const Pacientes = () => <div>Pacientes</div>
-const Espe = () => <div>Especialidades</div>
+import { Espe } from '../../views/Especialidades/Espe'
+import { Pacientes } from '../../views/Pacientes/Pacientes'
 
 export function Dashboard () {
   return (

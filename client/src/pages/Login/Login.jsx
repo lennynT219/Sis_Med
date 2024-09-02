@@ -2,10 +2,12 @@ import { Icon } from '@iconify/react'
 import './Login.css'
 import { icons } from '../../assets/icon/icons'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export function Login () {
   const [valores, setValores] = useState({})
   const [hide, setHide] = useState(false)
+  const navigate = useNavigate()
 
   const handleChange = (e) => {
     setValores({
@@ -18,6 +20,8 @@ export function Login () {
     e.preventDefault()
     // setHide(!hide)
     console.log(valores)
+    localStorage.setItem('token', '123456')
+    navigate('/')
   }
 
   return (

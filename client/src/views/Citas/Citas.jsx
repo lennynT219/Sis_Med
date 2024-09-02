@@ -24,16 +24,14 @@ export function Citas () {
       codigo: 'CITA-001',
       paciente: 'Juan',
       descripcion: 'Cita de prueba',
-      especialidad: 'Medicina General',
-      id: '05ff'
+      especialidad: 'Medicina General'
     },
     {
       _id: '2',
       codigo: 'CITA-002',
       paciente: 'Jose',
       descripcion: 'Cita de prueba 2',
-      especialidad: 'Medicina General',
-      id: '4c81'
+      especialidad: 'Medicina General'
     }
   ]
 
