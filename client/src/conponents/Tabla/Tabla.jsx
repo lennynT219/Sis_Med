@@ -2,10 +2,12 @@ import { Icon } from '@iconify/react'
 import { Link } from 'react-router-dom'
 import { icons } from '../../assets/icon/icons'
 import './Tabla.css'
+import { useState } from 'react'
+import { ModalCita } from '../Modals/ModalCita'
 // import { ModalUpdateTareas } from '../ModalTareas/ModalUpdateTareas'
 
-export function Tabla ({ headers, data, tabla, rol, handleUpdate, modal }) {
-  console.log('data', data)
+export function Tabla ({ headers, data, tabla, rol, handleUpdate }) {
+  const [modalTareas, setModalTareas] = useState(false)
   return (
     <div className='tabla'>
       <table>
@@ -23,7 +25,8 @@ export function Tabla ({ headers, data, tabla, rol, handleUpdate, modal }) {
                 {Object.values(row).map((cell, index) => (
                   <td key={index}>{cell}</td>
                 ))}
-                {/* modal && <ModalUpdateTareas setModalTareas={handleUpdate} row={row} /> */}
+                {rol === 'Paciente' && tabla === 'citas' && <td><Icon icon={icons.IConfig} onClick={() => setModalTareas(true)} /></td>}
+                {modalTareas && <ModalCita row={row} setModal={setModalTareas} />}
               </tr>
             )
           })}

@@ -8,13 +8,13 @@ import { Tabla } from '../../conponents/Tabla/Tabla'
 import './Citas.css'
 import { ModalCita } from '../../conponents/Modals/ModalCita'
 
-const headers = ['ID', 'CODIGO', 'PACIENTE', 'DESCRIPCÓN', 'ESPECIALIDAD']
+const headers = ['ID', 'CODIGO', 'PACIENTE', 'DESCRIPCÓN', 'ESPECIALIDAD', 'ACCIONES']
 
 export function Citas () {
   const [modal, setModal] = useState(false)
   // const { response: user } = useDataUser()
   const user = {
-    rol: 'Admin'
+    rol: 'Paciente'
   }
   // const url = user?.rol === 'Admin' ? 'http://localhost:4000/citas' : 'http://localhost:4000/citas'
 
@@ -37,7 +37,7 @@ export function Citas () {
 
   return (
     <>
-      <h1>Gestión de Quejas</h1>
+      <h1>Gestión de citas</h1>
       <hr />
       {user?.rol !== 'Admin' && <button onClick={() => { setModal(true) }}>Crear Cita</button>}
       {response.length > 0

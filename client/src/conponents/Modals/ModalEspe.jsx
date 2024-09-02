@@ -5,16 +5,13 @@ import { useState } from 'react'
 // import { url_createQuejas } from '../../assets/api/user.routes'
 import { toast } from 'sonner'
 
-export function ModalCita ({ setModal, row }) {
-  const [valores, setValores] = useState({
-    description: row?.descripcion || '',
-    especialidad: row?.especialidad || ''
-  })
-  console.log(valores)
+export function ModalEspe ({ setModal }) {
+  const [valores, setValores] = useState()
+
   const handleChange = (e) => {
     setValores({
       ...valores,
-      [e.target.name]: e.target.value.trim()
+      [e.target.name]: (e.target.value).trim()
     })
   }
 
@@ -26,7 +23,7 @@ export function ModalCita ({ setModal, row }) {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       }) */
-      toast.success('Cita creada')
+      toast.success('Especialidad creada')
     } catch (error) {
       console.log(error)
       toast.error('Error al crear cita')
@@ -41,12 +38,11 @@ export function ModalCita ({ setModal, row }) {
             <Icon icon={icons.IEmail} />
             <input
               type='text'
-              placeholder='Descipción de la cita'
-              name='description'
+              placeholder='Nombre de la especialidad'
+              name='nombre'
               onChange={handleChange}
               minLength='1'
               maxLength='50'
-              value={valores?.description}
             />
           </label>
           <label>
@@ -54,11 +50,10 @@ export function ModalCita ({ setModal, row }) {
             <input
               type='text'
               onChange={handleChange}
-              placeholder='Especialidad'
-              name='especialidad'
+              placeholder='Descripción de la especialidad'
+              name='description'
               minLength='1'
               maxLength='30'
-              value={valores?.especialidad}
             />
           </label>
         </form>

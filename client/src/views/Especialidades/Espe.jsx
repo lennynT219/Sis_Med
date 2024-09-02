@@ -3,6 +3,7 @@ import { useState } from 'react'
 // import { useDataUser } from '../../assets/context/dataUser'
 import { useGet } from '../../assets/hooks/useData'
 import { Tabla } from '../../conponents/Tabla/Tabla'
+import { ModalEspe } from '../../conponents/Modals/ModalEspe'
 
 export function Espe () {
   const headers = ['ID', 'CODIGO', 'NOMBRE', 'DESCRIPCION']
@@ -10,7 +11,7 @@ export function Espe () {
   // const { response: tareas } = useGet(url_getAllTareas)
   const [modal, setModal] = useState(false)
   const user = {
-    rol: 'Admin'
+    rol: 'Paciente'
   }
   const especialidades = [
     {
@@ -42,6 +43,7 @@ export function Espe () {
             modal={modal}
           />
         : <h2>No hay tareas pendientes</h2>}
+      {modal && <ModalEspe setModal={setModal} />}
     </>
   )
 }
