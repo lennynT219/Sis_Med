@@ -1,0 +1,48 @@
+{
+  "citas": [
+    {
+      "_id": "1",
+      "codigo": "CITA-001",
+      "descripcion": "Cita de prueba",
+      "paciente": {
+        "_id": "1",
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "fecha_nacimiento": "1990-01-01",
+        "genero": "M",
+        "direccion": "Calle 1",
+        "cuidad": "Quito",
+        "telefono": "0987654321",
+        "email": "juan@gmail.com"
+      },
+      "especialidad": {
+        "_id": "1",
+        "codigo": "ESP-001",
+        "nombre": "Medicina General",
+        "descripcio": "Especialidad de medicina general"
+      }
+    },
+    {
+      "_id": "2",
+      "codigo": "CITA-002",
+      "descripcion": "Cita de prueba 2",
+      "paciente": {
+        "_id": "2",
+        "nombre": "Maria",
+        "apellido": "Gonzalez",
+        "fecha_nacimiento": "1995-01-01",
+        "genero": "F",
+        "direccion": "Calle 2",
+        "cuidad": "Quito",
+        "telefono": "0987654321",
+        "email": "maria@gmail.com"
+      },
+      "especialidad": {
+        "_id": "2",
+        "codigo": "ESP-002",
+        "nombre": "Pediatría",
+        "descripcio": "Especialidad de pediatría"
+      }
+    }
+  ]
+}
